@@ -1,0 +1,158 @@
+.projects-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color:#92d0f0;
+}
+
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures image covers the container fully */
+    display: block;    /* Fixes any flex-related distortion */
+    transition: transform 0.3s ease;
+}
+  
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-links .btn {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.project-content {
+  padding: 24px;
+}
+
+.project-content h3 {
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  color: #6b7280;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #3B82F6, #14B8A6);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .project-card {
+    margin: 0 16px;
+  }
+  
+  .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .project-links .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
