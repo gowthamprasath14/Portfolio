@@ -12,15 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
 a {
   font-weight: 500;
   color: #646cff;
@@ -74,3 +65,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/* rm -rf dist               # remove old build
+npm run build             # generate new production build
+npm run deploy            # deploy to gh-pages branch */
